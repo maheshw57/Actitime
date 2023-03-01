@@ -33,6 +33,8 @@ public class TaskModule extends BaseClass {
 		String eTitle = "Accounting";
 		String atitle = t.getTitName().getText();
 		Assert.assertEquals(eTitle, atitle);
+		
+		Reporter.log("mahesh",true);
 	}
 
 }
