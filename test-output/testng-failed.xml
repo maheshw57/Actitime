@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="tests" name="Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.actiTime.testscript.CustomerModule">
+        <methods>
+          <include name="testCreateCustomer"/>
+          <include name="login"/>
+          <include name="openBrowser"/>
+          <include name="closeBrowser"/>
+          <include name="Logout"/>
+        </methods>
+      </class> <!-- com.actiTime.testscript.CustomerModule -->
+    </classes>
+  </test> <!-- Test(failed) -->
+  <test thread-count="5" parallel="tests" name="Test1(failed)">
+    <parameter name="browser" value="firefox"/>
     <classes>
       <class name="com.actiTime.testscript.ProjectModule">
         <methods>
@@ -12,24 +27,6 @@
           <include name="testCreatreProject"/>
         </methods>
       </class> <!-- com.actiTime.testscript.ProjectModule -->
-      <class name="com.actiTime.testscript.CustomerModule">
-        <methods>
-          <include name="testCreateCustomer"/>
-          <include name="login"/>
-          <include name="openBrowser"/>
-          <include name="closeBrowser"/>
-          <include name="Logout"/>
-        </methods>
-      </class> <!-- com.actiTime.testscript.CustomerModule -->
-      <class name="com.actiTime.testscript.TaskModule">
-        <methods>
-          <include name="login"/>
-          <include name="openBrowser"/>
-          <include name="closeBrowser"/>
-          <include name="Logout"/>
-          <include name="testcreateTask"/>
-        </methods>
-      </class> <!-- com.actiTime.testscript.TaskModule -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->
